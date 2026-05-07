@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1a5edb;
+    }
+
+    .painel {
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+
+     <nav>
+    <a href="index.html">Home</a>
+    <a href="guias.html">Guias</a>
+    <a href="politica.html">Privacidade</a>
+    <a href="contato.html">Contato</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+
+  <!-- LOGIN -->
+  <div class="login-box" id="login-box">
+
+    <h1>🔐 Login Admin</h1>
+
+    <input type="password" id="senha" placeholder="Digite a senha">
+
+    <button onclick="entrar()">Entrar</button>
+
+  </div>
+
+  <!-- PAINEL -->
+  <div class="painel" id="painel">
+
+    <h1>🛠️ Painel Admin</h1>
+
+    <p>Bem-vindo ao painel administrativo.</p>
+
+    <button onclick="logout()">Sair</button>
+
+  </div>
+
+  <script>
+
+    // SENHA
+    const senhaCorreta = "ADMINZGUELLL";
+
+    function entrar() {
+
+      const senha = document.getElementById("senha").value;
+
+      if (senha === senhaCorreta) {
+
+        document.getElementById("login-box").style.display = "none";
+        document.getElementById("painel").style.display = "block";
+
+      } else {
+
+        alert("Senha incorreta!");
+
+      }
+
+    }
+
+    function logout() {
+
+      document.getElementById("painel").style.display = "none";
+      document.getElementById("login-box").style.display = "block";
+
+    }
+
+  </script>
+
+</body>
+</html>

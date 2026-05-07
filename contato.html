@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Contato</title>
+  <link rel="shortcut icon" href="Discord.onegroup.webp" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  emailjs.init("CiRtU13LsvIMHUgPh");
+
+  document.getElementById("contact-form")
+    .addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      emailjs.sendForm(
+        "service_05zw6ge",
+        "template_gjvaw0g",
+        this
+      )
+      .then(() => {
+        alert("Mensagem enviada!");
+      })
+      .catch((error) => {
+        alert("Erro ao enviar.");
+        console.log(error);
+      });
+
+    });
+</script>
+
+<body>
+
+<nav>
+  <h2>🌐 Minha Wiki</h2>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="guias.html">Guias</a>
+    <a href="personagens.html">Participantes</a>
+    <a href="faq.html">FAQ</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="politica.html">Privacidade</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="card">
+
+    <h1>📞 Contato</h1>
+
+    <p>
+      Entre em contato para dúvidas, sugestões ou parcerias.
+    </p>
+
+    <form id="contact-form">
+
+  <input type="text" name="name" placeholder="Seu nome" required>
+
+  <input type="email" name="email" placeholder="Seu email" required>
+
+  <textarea name="message" placeholder="Sua mensagem" rows="5"></textarea>
+
+  <button type="submit">Enviar</button>
+
+</form>
+
+</body>
+</html>
